@@ -1,0 +1,1769 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Shedrack Waema Stores — premium online business management, inventory, sales, customers and analytics system."
+    >
+
+    <meta name="theme-color" content="#0b1220">
+
+    <title>Shedrack Waema Stores | Premium Business Management System</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta name="google-site-verification" content="yVOYDjdKGF_Q8Avyfp9eUGO2E9woZCWt5CT-Zl5hi4s" />
+</head>
+
+<body>
+
+    <!-- Mobile Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-mark">
+                SW
+            </div>
+
+            <div>
+                <h2>Shedrack Waema</h2>
+                <span>Stores • Business Suite</span>
+            </div>
+
+        </div>
+
+
+        <nav class="navigation">
+
+            <p class="nav-label">MAIN</p>
+
+            <a href="#" class="nav-link active">
+                <span>⌂</span>
+                Dashboard
+            </a>
+
+            <a href="#products" class="nav-link">
+                <span>▣</span>
+                Products
+            </a>
+
+            <a href="#sales" class="nav-link">
+                <span>◈</span>
+                Sales
+            </a>
+
+            <a href="#inventory" class="nav-link">
+                <span>◫</span>
+                Inventory
+            </a>
+
+            <p class="nav-label">MANAGEMENT</p>
+
+            <a href="#customers" class="nav-link">
+                <span>♙</span>
+                Customers
+            </a>
+
+<a href="#invoices" class="nav-link">
+    <span>▤</span>
+    Invoices
+</a>
+
+<a href="#reports" class="nav-link">
+    <span>▤</span>
+    Reports
+</a>
+
+<a href="#settings" class="nav-link">
+    <span>⚙</span>
+    Settings
+</a>
+
+        <div class="sidebar-bottom">
+
+            <div class="support-card">
+                <span class="support-icon">?</span>
+
+                <div>
+                    <strong>Need help?</strong>
+                    <small>Contact support</small>
+                </div>
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <button
+                class="mobile-menu"
+                id="mobileMenu"
+                aria-label="Open navigation">
+                ☰
+            </button>
+
+            <div class="page-heading">
+
+                <span class="eyebrow">
+                    BUSINESS OVERVIEW
+                </span>
+
+                <h1>Dashboard</h1>
+
+                <p>
+                    Monitor your business performance from one place.
+                </p>
+
+            </div>
+
+
+            <div class="topbar-actions">
+
+                <button class="icon-btn" aria-label="Notifications">
+                    ♧
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="cloud-status offline" id="cloudStatus">Cloud setup required</div>
+
+                <div class="user-profile">
+                    <div class="avatar">SW</div>
+                    <div class="user-info">
+                        <strong>Shedrack Waema</strong>
+                        <span>Administrator • <span data-user-email>Store Owner</span></span>
+                    </div>
+                    <button class="signout-btn" id="signOutBtn" type="button" title="Sign out">↪</button>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- DASHBOARD -->
+        <section class="dashboard-grid">
+
+            <!-- Revenue -->
+            <article class="metric-card primary-card">
+
+                <div class="metric-top">
+                    <span>Total Revenue</span>
+                    <span class="metric-icon">KSh</span>
+                </div>
+
+                <h2 id="salesTotal">KSh 0</h2>
+
+                <div class="metric-footer">
+                    <span class="positive">↑ 12.5%</span>
+                    <span>vs last month</span>
+                </div>
+
+            </article>
+<!-- =========================================
+     PREMIUM BUSINESS ANALYTICS
+========================================= -->
+
+<section class="panel analytics-dashboard">
+
+    <div class="panel-header">
+
+        <div>
+            <span class="eyebrow">BUSINESS ANALYTICS</span>
+
+            <h2>Business Overview</h2>
+
+            <p>
+                Monitor your sales, revenue, inventory and customer activity.
+            </p>
+        </div>
+
+        <div class="analytics-period">
+            <span>Live Data</span>
+            <span class="live-dot"></span>
+        </div>
+
+    </div>
+
+
+    <!-- ANALYTICS GRID -->
+
+    <div class="analytics-grid">
+
+        <!-- REVENUE -->
+
+        <div class="analytics-card revenue-card">
+
+            <div class="analytics-card-top">
+
+                <div>
+                    <span>Total Revenue</span>
+
+                    <h3 id="analyticsRevenue">
+                        KSh 0
+                    </h3>
+                </div>
+
+                <div class="analytics-icon">
+                    💰
+                </div>
+
+            </div>
+
+            <div class="analytics-footer">
+                <span>From recorded sales</span>
+            </div>
+
+        </div>
+
+
+        <!-- SALES -->
+
+        <div class="analytics-card">
+
+            <div class="analytics-card-top">
+
+                <div>
+                    <span>Total Sales</span>
+
+                    <h3 id="analyticsSales">
+                        0
+                    </h3>
+                </div>
+
+                <div class="analytics-icon">
+                    📈
+                </div>
+
+            </div>
+
+            <div class="analytics-footer">
+                <span>Completed transactions</span>
+            </div>
+
+        </div>
+
+
+        <!-- CUSTOMERS -->
+
+        <div class="analytics-card">
+
+            <div class="analytics-card-top">
+
+                <div>
+                    <span>Customers</span>
+
+                    <h3 id="analyticsCustomers">
+                        0
+                    </h3>
+                </div>
+
+                <div class="analytics-icon">
+                    👥
+                </div>
+
+            </div>
+
+            <div class="analytics-footer">
+                <span>Registered customers</span>
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCTS -->
+
+        <div class="analytics-card">
+
+            <div class="analytics-card-top">
+
+                <div>
+                    <span>Products</span>
+
+                    <h3 id="analyticsProducts">
+                        0
+                    </h3>
+                </div>
+
+                <div class="analytics-icon">
+                    📦
+                </div>
+
+            </div>
+
+            <div class="analytics-footer">
+                <span>Products in inventory</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- CHART + INVENTORY -->
+
+    <div class="dashboard-analysis-grid">
+
+        <!-- SALES ACTIVITY -->
+
+        <div class="analysis-panel">
+
+            <div class="analysis-header">
+
+                <div>
+
+                    <span class="eyebrow">
+                        SALES PERFORMANCE
+                    </span>
+
+                    <h3>Recent Sales Activity</h3>
+
+                </div>
+
+                <span class="analysis-label">
+                    Last 7 Days
+                </span>
+
+            </div>
+
+            <div class="sales-chart">
+
+                <div class="chart-bars" id="salesChart">
+
+                    <div class="chart-empty">
+                        No sales data yet
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- INVENTORY HEALTH -->
+
+        <div class="analysis-panel">
+
+            <div class="analysis-header">
+
+                <div>
+
+                    <span class="eyebrow">
+                        INVENTORY
+                    </span>
+
+                    <h3>Inventory Health</h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="inventory-health">
+
+                <div class="health-item">
+
+                    <div class="health-info">
+
+                        <span>Available Stock</span>
+
+                        <strong id="availableStock">
+                            0
+                        </strong>
+
+                    </div>
+
+                    <div class="health-bar">
+
+                        <span
+                            id="availableStockBar"
+                            class="health-fill available-fill">
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="health-item">
+
+                    <div class="health-info">
+
+                        <span>Low Stock</span>
+
+                        <strong id="lowStock">
+                            0
+                        </strong>
+
+                    </div>
+
+                    <div class="health-bar">
+
+                        <span
+                            id="lowStockBar"
+                            class="health-fill low-fill">
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="health-item">
+
+                    <div class="health-info">
+
+                        <span>Out of Stock</span>
+
+                        <strong id="outOfStock">
+                            0
+                        </strong>
+
+                    </div>
+
+                    <div class="health-bar">
+
+                        <span
+                            id="outOfStockBar"
+                            class="health-fill out-fill">
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- RECENT TRANSACTIONS -->
+
+    <div class="recent-transactions">
+
+        <div class="analysis-header">
+
+            <div>
+
+                <span class="eyebrow">
+                    TRANSACTIONS
+                </span>
+
+                <h3>Recent Sales</h3>
+
+            </div>
+
+            <button
+                class="secondary-btn"
+                onclick="showSection('sales')">
+
+                View All
+
+            </button>
+
+        </div>
+
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Customer</th>
+                        <th>Product</th>
+                        <th>Amount</th>
+                        <th>Payment</th>
+                        <th>Date</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="recentSalesTable">
+
+                </tbody>
+
+            </table>
+
+            <div
+                class="empty-state"
+                id="recentSalesEmpty">
+
+                <div>📊</div>
+
+                <h3>No transactions yet</h3>
+
+                <p>
+                    Your recent sales will appear here.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+            <!-- Products -->
+            <article class="metric-card">
+
+                <div class="metric-top">
+                    <span>Total Products</span>
+                    <span class="metric-icon">▣</span>
+                </div>
+
+                <h2 id="productCount">0</h2>
+
+                <div class="metric-footer">
+                    <span>Active products</span>
+                </div>
+
+            </article>
+
+
+            <!-- Inventory -->
+            <article class="metric-card">
+
+                <div class="metric-top">
+                    <span>Stock Units</span>
+                    <span class="metric-icon">◫</span>
+                </div>
+
+                <h2 id="stockCount">0</h2>
+
+                <div class="metric-footer">
+                    <span id="stockStatus">Inventory healthy</span>
+                </div>
+
+            </article>
+
+
+            <!-- Customers -->
+            <article class="metric-card">
+
+                <div class="metric-top">
+                    <span>Customers</span>
+                    <span class="metric-icon">♙</span>
+                </div>
+
+                <h2 id="customerCount">0</h2>
+
+                <div class="metric-footer">
+                    <span>Registered customers</span>
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- QUICK ACTIONS -->
+        <section class="quick-actions">
+
+            <button class="quick-action" onclick="openProductModal()">
+                <span>+</span>
+                Add Product
+            </button>
+
+            <button class="quick-action">
+                <span>↗</span>
+                Record Sale
+            </button>
+
+            <button class="quick-action">
+                <span>▤</span>
+                Generate Report
+            </button>
+
+        </section>
+
+
+        <!-- PRODUCTS -->
+        <section class="panel" id="products">
+
+            <div class="panel-header">
+
+                <div>
+                    <span class="eyebrow">
+                        INVENTORY
+                    </span>
+
+                    <h2>Product Management</h2>
+
+                    <p>
+                        Manage products, pricing and available stock.
+                    </p>
+                </div>
+
+
+                <button
+                    class="primary-btn"
+                    onclick="openProductModal()">
+
+                    <span>+</span>
+                    Add Product
+
+                </button>
+
+            </div>
+
+
+            <!-- TOOLBAR -->
+            <div class="toolbar">
+
+                <div class="search-wrapper">
+
+                    <span>⌕</span>
+
+                    <input
+                        type="search"
+                        id="searchProduct"
+                        placeholder="Search products..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <select id="stockFilter">
+
+                    <option value="all">
+                        All stock
+                    </option>
+
+                    <option value="available">
+                        Available
+                    </option>
+
+                    <option value="low">
+                        Low stock
+                    </option>
+
+                    <option value="out">
+                        Out of stock
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- TABLE -->
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>PRODUCT</th>
+                            <th>PRICE</th>
+                            <th>STOCK</th>
+                            <th>STATUS</th>
+                            <th>ACTIONS</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="productTable"></tbody>
+
+                </table>
+
+                <div
+                    class="empty-state"
+                    id="emptyState">
+
+                    <div>▣</div>
+
+                    <h3>No products found</h3>
+
+                    <p>
+                        Add your first product to get started.
+                    </p>
+
+                    <button
+                        class="primary-btn"
+                        onclick="openProductModal()">
+
+                        Add Product
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+        <!-- SALES MANAGEMENT -->
+Record Sale
+  <!-- CUSTOMERS MANAGEMENT -->
+<section class="panel customers-section" id="customers">
+
+    <div class="panel-header">
+
+        <div>
+            <span class="eyebrow">CUSTOMER MANAGEMENT</span>
+
+            <h2>Customers</h2>
+
+            <p>
+                Manage your customers and their business information.
+            </p>
+        </div>
+
+        <button
+            class="primary-btn"
+            onclick="openCustomerModal()">
+
+            + Add Customer
+
+        </button>
+
+    </div>
+
+
+    <!-- CUSTOMER SUMMARY -->
+
+    <div class="customer-summary">
+
+        <div class="customer-summary-card">
+            <span>Total Customers</span>
+            <strong id="totalCustomers">0</strong>
+        </div>
+
+        <div class="customer-summary-card">
+            <span>Active Customers</span>
+            <strong id="activeCustomers">0</strong>
+        </div>
+
+        <div class="customer-summary-card">
+            <span>Total Customer Sales</span>
+            <strong id="customerSalesTotal">KSh 0</strong>
+        </div>
+
+    </div>
+
+
+    <!-- CUSTOMER SEARCH -->
+
+    <div class="customer-search">
+
+        <input
+            type="search"
+            id="customerSearch"
+            placeholder="Search customers..."
+        >
+
+    </div>
+
+
+    <!-- CUSTOMER TABLE -->
+
+    <div class="table-wrapper">
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>Customer</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Total Purchases</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+
+            </thead>
+
+            <tbody id="customersTable"></tbody>
+
+        </table>
+
+
+        <div
+            class="empty-state"
+            id="customersEmptyState">
+
+            <div>♙</div>
+
+            <h3>No customers yet</h3>
+
+            <p>
+                Add your first customer to start building your customer database.
+            </p>
+
+            <button
+                class="primary-btn"
+                onclick="openCustomerModal()">
+
+                + Add Customer
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>      
+<!-- =========================================
+     INVOICES & RECEIPTS
+========================================= -->
+
+<section class="panel invoices-section" id="invoices">
+
+    <div class="panel-header">
+
+        <div>
+            <span class="eyebrow">BILLING MANAGEMENT</span>
+
+            <h2>Invoices & Receipts</h2>
+
+            <p>
+                Create, view and print professional customer invoices.
+            </p>
+        </div>
+
+        <button
+            class="primary-btn"
+            onclick="createInvoiceFromLatestSale()">
+
+            + Create Invoice
+
+        </button>
+
+    </div>
+
+
+    <div class="invoice-summary">
+
+        <div class="invoice-summary-card">
+            <span>Total Invoices</span>
+            <strong id="totalInvoices">0</strong>
+        </div>
+
+        <div class="invoice-summary-card">
+            <span>Paid Invoices</span>
+            <strong id="paidInvoices">0</strong>
+        </div>
+
+        <div class="invoice-summary-card">
+            <span>Total Billed</span>
+            <strong id="totalBilled">KSh 0</strong>
+        </div>
+
+    </div>
+
+
+    <div class="table-wrapper">
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>Invoice</th>
+                    <th>Customer</th>
+                    <th>Amount</th>
+                    <th>Payment</th>
+                    <th>Date</th>
+                    <th>Action</th>
+                </tr>
+
+            </thead>
+
+            <tbody id="invoicesTable"></tbody>
+
+        </table>
+
+        <div
+            class="empty-state"
+            id="invoicesEmptyState">
+
+            <div>🧾</div>
+
+            <h3>No invoices yet</h3>
+
+            <p>
+                Create an invoice from a recorded sale.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+ <!-- =========================================
+     BUSINESS SETTINGS
+========================================= -->
+
+<section class="panel settings-section" id="settings">
+
+    <div class="panel-header">
+
+        <div>
+            <span class="eyebrow">SYSTEM CONFIGURATION</span>
+
+            <h2>Business Settings</h2>
+
+            <p>
+                Configure your business information and invoice preferences.
+            </p>
+        </div>
+
+    </div>
+
+
+    <form id="businessSettingsForm">
+
+        <div class="settings-grid">
+
+            <!-- BUSINESS INFORMATION -->
+
+            <div class="settings-card">
+
+                <div class="settings-card-header">
+
+                    <span class="settings-icon">
+                        🏢
+                    </span>
+
+                    <div>
+                        <h3>Business Information</h3>
+
+                        <p>
+                            Your business details.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <label>
+
+                    Business Name
+
+                    <input
+                        type="text"
+                        id="businessName"
+                        placeholder="e.g. Waema Enterprises"
+                        required
+                    >
+
+                </label>
+
+
+                <label>
+
+                    Phone Number
+
+                    <input
+                        type="tel"
+                        id="businessPhone"
+                        placeholder="e.g. 0712345678"
+                    >
+
+                </label>
+
+
+                <label>
+
+                    Email Address
+
+                    <input
+                        type="email"
+                        id="businessEmail"
+                        placeholder="e.g. business@example.com"
+                    >
+
+                </label>
+
+
+                <label>
+
+                    Business Location
+
+                    <input
+                        type="text"
+                        id="businessLocation"
+                        placeholder="e.g. Chuka, Kenya"
+                    >
+
+                </label>
+
+            </div>
+
+
+            <!-- INVOICE SETTINGS -->
+
+            <div class="settings-card">
+
+                <div class="settings-card-header">
+
+                    <span class="settings-icon">
+                        🧾
+                    </span>
+
+                    <div>
+
+                        <h3>Invoice Settings</h3>
+
+                        <p>
+                            Customize your invoices.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <label>
+
+                    Currency
+
+                    <select id="businessCurrency">
+
+                        <option value="KSh">
+                            KSh — Kenyan Shilling
+                        </option>
+
+                        <option value="USD">
+                            USD — US Dollar
+                        </option>
+
+                        <option value="EUR">
+                            EUR — Euro
+                        </option>
+
+                        <option value="GBP">
+                            GBP — British Pound
+                        </option>
+
+                    </select>
+
+                </label>
+
+
+                <label>
+
+                    Invoice Prefix
+
+                    <input
+                        type="text"
+                        id="invoicePrefix"
+                        placeholder="INV"
+                        maxlength="10"
+                    >
+
+                </label>
+
+
+                <label>
+
+                    Invoice Footer
+
+                    <textarea
+                        id="invoiceFooter"
+                        rows="4"
+                        placeholder="Thank you for your business."
+                    ></textarea>
+
+                </label>
+
+            </div>
+
+        </div>
+
+
+        <!-- SAVE AREA -->
+
+        <div class="settings-actions">
+
+            <div>
+
+                <strong>
+                    Save your business configuration
+                </strong>
+
+                <p>
+                    These settings are stored locally on this device.
+                </p>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="primary-btn">
+
+                ✓ Save Settings
+
+            </button>
+
+        </div>
+
+    </form>
+
+</section>       
+    </main>
+
+
+    <!-- PRODUCT MODAL -->
+    <div
+        class="modal"
+        id="productModal"
+        aria-hidden="true">
+
+        <div class="modal-box">
+
+            <div class="modal-header">
+
+                <div>
+                    <span class="eyebrow">
+                        PRODUCT MANAGEMENT
+                    </span>
+
+                    <h2 id="modalTitle">
+                        Add Product
+                    </h2>
+                </div>
+
+                <button
+                    class="close-btn"
+                    onclick="closeProductModal()"
+                    aria-label="Close">
+
+                    ×
+
+                </button>
+
+            </div>
+
+
+            <form id="productForm">
+
+                <input
+                    type="hidden"
+                    id="editingProductId"
+                >
+
+
+                <label>
+                    Product Name
+
+                    <input
+                        type="text"
+                        id="productName"
+                        placeholder="e.g. Samsung Charger"
+                        required
+                    >
+
+                </label>
+
+
+                <div class="form-row">
+
+                    <label>
+                        Price
+
+                        <input
+                            type="number"
+                            id="productPrice"
+                            placeholder="0"
+                            min="0"
+                            step="0.01"
+                            required
+                        >
+
+                    </label>
+
+
+                    <label>
+                        Stock
+
+                        <input
+                            type="number"
+                            id="productStock"
+                            placeholder="0"
+                            min="0"
+                            required
+                        >
+
+                    </label>
+
+                </div>
+
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        class="secondary-btn"
+                        onclick="closeProductModal()">
+
+                        Cancel
+
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="primary-btn">
+
+                        Save Product
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+<!-- SALE MODAL -->
+
+<div
+    class="modal"
+    id="saleModal"
+    aria-hidden="true">
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+            <div>
+
+                <span class="eyebrow">
+                    SALES MANAGEMENT
+                </span>
+
+                <h2>
+                    Record New Sale
+                </h2>
+
+            </div>
+
+            <button
+                class="close-btn"
+                onclick="closeSaleModal()"
+                aria-label="Close">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+        <form id="saleForm">
+
+            <!-- CUSTOMER -->
+
+            <!-- CUSTOMER -->
+
+<label>
+
+    Customer
+
+    <select
+        id="saleCustomer"
+        required>
+
+        <option value="">
+            Select customer
+        </option>
+
+    </select>
+
+</label>
+
+
+            <!-- PRODUCT -->
+
+            <label>
+
+                Product
+
+                <select
+                    id="saleProduct"
+                    required>
+
+                    <option value="">
+                        Select product
+                    </option>
+
+                </select>
+
+            </label>
+
+
+            <div class="form-row">
+
+                <!-- QUANTITY -->
+
+                <label>
+
+                    Quantity
+
+                    <input
+                        type="number"
+                        id="saleQuantity"
+                        value="1"
+                        min="1"
+                        required
+                    >
+
+                </label>
+
+
+                <!-- PAYMENT -->
+
+                <label>
+
+                    Payment Status
+
+                    <select id="salePayment">
+
+                        <option value="Paid">
+                            Paid
+                        </option>
+
+                        <option value="Pending">
+                            Pending
+                        </option>
+
+                    </select>
+
+                </label>
+
+            </div>
+
+
+            <!-- TOTAL -->
+
+            <div class="sale-total-box">
+
+                <span>
+                    Sale Total
+                </span>
+
+                <strong id="saleTotal">
+                    KSh 0
+                </strong>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    onclick="closeSaleModal()">
+
+                    Cancel
+
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-btn">
+
+                    Save Sale
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+    <!-- TOAST -->
+    <div
+        class="toast"
+        id="toast">
+
+        <span id="toastIcon">✓</span>
+
+        <div>
+            <strong id="toastTitle">
+                Success
+            </strong>
+
+            <p id="toastMessage">
+                Operation completed.
+            </p>
+        </div>
+
+    </div>
+
+
+<!-- CUSTOMER MODAL -->
+
+<div class="modal" id="customerModal" aria-hidden="true">
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+            <div>
+                <span class="eyebrow">CUSTOMER MANAGEMENT</span>
+
+                <h2>Add New Customer</h2>
+
+                <p>
+                    Create a customer profile for your business.
+                </p>
+            </div>
+
+            <button
+                type="button"
+                class="close-btn"
+                onclick="closeCustomerModal()"
+                aria-label="Close customer form">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+        <form id="customerForm">
+
+            <!-- NAME -->
+
+            <label>
+                Customer Name
+
+                <input
+                    type="text"
+                    id="customerName"
+                    placeholder="e.g. John Mwangi"
+                    required
+                >
+            </label>
+
+
+            <!-- PHONE -->
+
+            <label>
+                Phone Number
+
+                <input
+                    type="tel"
+                    id="customerPhone"
+                    placeholder="e.g. 0712345678"
+                    required
+                >
+            </label>
+
+
+            <!-- EMAIL -->
+
+            <label>
+                Email Address
+
+                <input
+                    type="email"
+                    id="customerEmail"
+                    placeholder="e.g. john@example.com"
+                >
+            </label>
+
+
+            <!-- STATUS -->
+
+            <label>
+                Customer Status
+
+                <select id="customerStatus">
+
+                    <option value="Active">
+                        Active
+                    </option>
+
+                    <option value="Inactive">
+                        Inactive
+                    </option>
+
+                </select>
+            </label>
+
+
+            <!-- ACTIONS -->
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    onclick="closeCustomerModal()">
+
+                    Cancel
+
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-btn">
+
+                    Save Customer
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+   <!-- =========================================
+     INVOICE MODAL
+========================================= -->
+
+<div
+    class="modal"
+    id="invoiceModal"
+    aria-hidden="true">
+
+    <div class="modal-box invoice-modal-box">
+
+        <div class="modal-header">
+
+            <div>
+                <span class="eyebrow">
+                    BILLING
+                </span>
+
+                <h2>Invoice Preview</h2>
+
+                <p>
+                    Review your invoice before printing.
+                </p>
+            </div>
+
+            <button
+                type="button"
+                class="close-btn"
+                onclick="closeInvoiceModal()"
+                aria-label="Close invoice">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+        <!-- PRINTABLE INVOICE -->
+
+        <div
+            class="print-invoice"
+            id="printInvoice">
+
+            <div class="invoice-top">
+
+                <div>
+    <h1 id="invoiceBusinessName">SHEDRACK WAEMA STORES</h1>
+
+    <p id="invoiceBusinessTagline">
+        Business Management System
+    </p>
+
+    <p id="invoiceBusinessContact">
+        +254743551445
+    </p>
+
+    <p id="invoiceBusinessLocation">
+        Kenya
+    </p>
+</div>
+
+                <div class="invoice-number">
+
+                    <span>INVOICE</span>
+
+                    <strong id="invoiceNumber">
+                        INV-000001
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="invoice-divider"></div>
+
+
+            <div class="invoice-details">
+
+                <div>
+
+                    <span>BILLED TO</span>
+
+                    <strong id="invoiceCustomer">
+                        Customer
+                    </strong>
+
+                    <p id="invoiceCustomerPhone">
+                        —
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <span>DATE</span>
+
+                    <strong id="invoiceDate">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="invoice-items">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Product</th>
+                            <th>Qty</th>
+                            <th>Price</th>
+                            <th>Total</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td id="invoiceProduct">
+                                Product
+                            </td>
+
+                            <td id="invoiceQuantity">
+                                1
+                            </td>
+
+                            <td id="invoicePrice">
+                                KSh 0
+                            </td>
+
+                            <td id="invoiceTotal">
+                                KSh 0
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <div class="invoice-total">
+
+                <span>Total Amount</span>
+
+                <strong id="invoiceGrandTotal">
+                    KSh 0
+                </strong>
+
+            </div>
+
+
+            <div class="invoice-payment">
+
+                <span>Payment Method</span>
+
+                <strong id="invoicePayment">
+                    —
+                </strong>
+
+            </div>
+
+
+        <div class="invoice-footer">
+
+    <strong id="invoiceFooterText">
+        Thank you for your business.
+    </strong>
+
+    <span>
+        Powered by Shedrack Waema Stores
+    </span>
+
+</div>
+
+
+
+        <div class="modal-actions">
+
+            <button
+                type="button"
+                class="secondary-btn"
+                onclick="closeInvoiceModal()">
+
+                Close
+
+            </button>
+
+            <button
+                type="button"
+                class="primary-btn"
+                onclick="printInvoice()">
+
+                🖨 Print Invoice
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div> 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+    <script src="cloud-sync.js"></script>
+</body>
+
+</html>
