@@ -1057,7 +1057,6 @@ localStorage.setItem(
     }
 );
 
-
 /* RENDER SALES */
 
 function renderSales() {
@@ -1067,6 +1066,11 @@ function renderSales() {
 
     const emptyState =
         document.getElementById("salesEmptyState");
+
+
+    if (!table || !emptyState) {
+        return;
+    }
 
 
     table.innerHTML = "";
@@ -1104,37 +1108,42 @@ function renderSales() {
             );
 
 
+        // PREMIUM: Elegant indicator badges with semantic state colors
         const paymentClass =
             sale.payment === "Paid"
-                ? "available"
-                : "low";
+                ? "badge-premium-success"
+                : "badge-premium-warning";
 
 
         row.innerHTML = `
 
-            <td>
-                ${escapeHTML(sale.customer)}
+            <td class="cell-primary-text">
+                <div class="user-meta-group">
+                    <span class="user-avatar-initial">${escapeHTML(sale.customer.charAt(0))}</span>
+                    <span class="user-title">${escapeHTML(sale.customer)}</span>
+                </div>
             </td>
 
-            <td>
+            <td class="cell-secondary-text">
                 ${escapeHTML(sale.productName)}
             </td>
 
-            <td>
-                ${sale.quantity}
+            <td class="cell-numeric-text">
+                <span class="muted-multiplier">×</span> ${sale.quantity}
             </td>
 
-            <td>
+            <td class="cell-amount-display text-bold">
                 KSh ${formatNumber(sale.total)}
             </td>
 
             <td>
-                <span class="stock-badge ${paymentClass}">
+                <span class="status-pill ${paymentClass}">
+                    <span class="status-dot"></span>
                     ${sale.payment}
                 </span>
             </td>
 
-            <td>
+            <td class="cell-date-display">
                 ${formattedDate}
             </td>
 
@@ -1183,27 +1192,39 @@ function updateSalesSummary() {
             );
 
 
-    document.getElementById(
-        "todaySales"
-    ).textContent =
-        `KSh ${formatNumber(todayTotal)}`;
+    const todaySalesEl = document.getElementById("todaySales");
+    const transactionCountEl = document.getElementById("transactionCount");
+    const pendingPaymentsEl = document.getElementById("pendingPayments");
 
 
-    document.getElementById(
-        "transactionCount"
-    ).textContent =
-        sales.length;
+    // PREMIUM: Display metrics wrapped inside clean HTML sub-structures with secondary labels
+    if (todaySalesEl) {
+        todaySalesEl.innerHTML = `
+            <span class="currency-prefix">KSh</span>
+            <span class="metric-value-huge">${formatNumber(todayTotal)}</span>
+            <span class="metric-trend subtext-muted">Cleared Today</span>
+        `;
+    }
 
+    if (transactionCountEl) {
+        transactionCountEl.innerHTML = `
+            <span class="metric-value-huge">${formatNumber(sales.length)}</span>
+            <span class="metric-trend subtext-muted">Active Volume</span>
+        `;
+    }
 
-    document.getElementById(
-        "pendingPayments"
-    ).textContent =
-        `KSh ${formatNumber(pendingTotal)}`;
+    if (pendingPaymentsEl) {
+        pendingPaymentsEl.innerHTML = `
+            <span class="currency-prefix text-warning">KSh</span>
+            <span class="metric-value-huge text-warning">${formatNumber(pendingTotal)}</span>
+            <span class="metric-trend subtext-muted">Awaiting Settlement</span>
+        `;
+    }
 
 }
 
 
-/* UPDATE REVENUE */
+/* UPDATE REVENUE & PREMIUM ANALYTICS OVERVIEW */
 
 function updateSalesRevenue() {
 
@@ -1215,29 +1236,56 @@ function updateSalesRevenue() {
         );
 
 
+    // Update Top Left Metric Block
     const revenueElement =
         document.getElementById(
             "salesTotal"
         );
 
-
     if (revenueElement) {
+        revenueElement.innerHTML = `
+            <span class="currency-prefix">KSh</span>
+            <span class="headline-number">${formatNumber(totalRevenue)}</span>
+        `;
+    }
 
-        revenueElement.textContent =
-            `KSh ${formatNumber(totalRevenue)}`;
 
+    // Update Premium Business Analytics Grid Elements
+    const analyticsRevenueEl = document.getElementById("analyticsRevenue");
+    const analyticsSalesEl = document.getElementById("analyticsSales");
+    const analyticsCustomersEl = document.getElementById("analyticsCustomers");
+
+
+    if (analyticsRevenueEl) {
+        analyticsRevenueEl.innerHTML = `
+            <span class="currency-label-sm">KSh</span>
+            <span class="card-value-display">${formatNumber(totalRevenue)}</span>
+        `;
+    }
+
+    if (analyticsSalesEl) {
+        analyticsSalesEl.innerHTML = `
+            <span class="card-value-display">${formatNumber(sales.length)}</span>
+        `;
+    }
+
+    if (analyticsCustomersEl && typeof customers !== 'undefined') {
+        analyticsCustomersEl.innerHTML = `
+            <span class="card-value-display">${formatNumber(customers.length)}</span>
+        `;
     }
 
 }
 
 
-/* INITIALIZE SALES */
+/* INITIALIZE SALES COMPONENTS */
 
 renderSales();
 
 updateSalesSummary();
 
 updateSalesRevenue();
+
 /* =========================================
    CUSTOMER MANAGEMENT
 ========================================= */
